@@ -205,3 +205,95 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# JavaScript/TypeScript
+*.js.map
+*.ts.map
+dist/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+
+# C/C++
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+*.dylib
+cmake-build-*/
+build/
+
+# Go
+*.test
+*.prof
+vendor/
+
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+
+# C#/.NET
+bin/
+obj/
+*.suo
+*.user
+.vs/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.#*
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs
+.idea/
+*.iml
+*.swp
+*.swo

@@ -46,6 +46,17 @@ curl -X POST 'http://127.0.0.1:8000/v1/convert-rate-card' \
   -F 'file=@data/sample_rate_card.csv'
 ```
 
+
+## Educational MCP server (OpenAI/Claude/Gemini-ready)
+
+For interview prep and architecture study, this project now includes a simple MCP server with:
+
+- Provider abstraction for OpenAI, Claude, Gemini (+ deterministic fallback).
+- Hybrid agent orchestration (deterministic mapping + safe self-improvement loop).
+- MCP tools to run conversion and inspect agent decisions.
+
+See [`mcp_server/README.md`](./mcp_server/README.md) for architecture diagrams, data flow, and study notes.
+
 ## Testing
 
 ```bash

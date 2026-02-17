@@ -25,7 +25,7 @@ model, sequence diagrams, and scaling strategies.
 
 ## Quick Start
 
-**Requirements:** Python 3.11+, pip
+**Requirements:** Python 3.10+, pip
 
 ```bash
 # 1. Navigate to the project directory
@@ -193,3 +193,73 @@ Tests PDF table extraction and currency/carrier name inference.
 | 6     | Unit and integration tests          | Complete |
 | 7     | Docker configuration                | Complete |
 | 8     | Documentation                       | Complete |
+
+The phases above map to the following Git history. Each phase was developed on
+its own branch and merged back to `master` after all tests passed:
+
+```mermaid
+gitGraph
+   commit id: "init: experiment scaffold"
+
+   branch phase/1-foundation
+   checkout phase/1-foundation
+   commit id: "domain entities & ports"
+   commit id: "settings, DB session, ORM models"
+   checkout master
+   merge phase/1-foundation id: "Phase 1: Foundation"
+
+   branch phase/2-infrastructure
+   checkout phase/2-infrastructure
+   commit id: "PDFExtractor + XLSXExtractor"
+   commit id: "AzureDocumentExtractor (httpx)"
+   commit id: "LangChainLLMMapper + MockLLMMapper"
+   commit id: "SQLite / Postgres repositories"
+   checkout master
+   merge phase/2-infrastructure id: "Phase 2: Infrastructure"
+
+   branch phase/3-use-cases
+   checkout phase/3-use-cases
+   commit id: "UploadDocumentUseCase"
+   commit id: "ProcessDocumentUseCase (session_factory)"
+   commit id: "GetRateCardUseCase"
+   checkout master
+   merge phase/3-use-cases id: "Phase 3: Use Cases"
+
+   branch phase/4-api
+   checkout phase/4-api
+   commit id: "FastAPI app + lifespan"
+   commit id: "documents routes (upload, status)"
+   commit id: "rate-cards routes (list, get)"
+   commit id: "dependency injection wiring"
+   checkout master
+   merge phase/4-api id: "Phase 4: API Layer"
+
+   branch phase/5-samples
+   checkout phase/5-samples
+   commit id: "generate_samples.py (Excel + PDF)"
+   checkout master
+   merge phase/5-samples id: "Phase 5: Sample Data"
+
+   branch phase/6-tests
+   checkout phase/6-tests
+   commit id: "unit tests (31 passing)"
+   commit id: "integration tests (11 passing)"
+   commit id: "fix: pyproject.toml build-backend"
+   commit id: "fix: pydantic-settings version range"
+   checkout master
+   merge phase/6-tests id: "Phase 6: Tests (42/42)"
+
+   branch phase/7-docker
+   checkout phase/7-docker
+   commit id: "Dockerfile + docker-compose.yml"
+   commit id: "docker-compose.azure.yml"
+   checkout master
+   merge phase/7-docker id: "Phase 7: Docker"
+
+   branch phase/8-docs
+   checkout phase/8-docs
+   commit id: "README + ARCHITECTURE + SYSTEM_DESIGN"
+   commit id: "Mermaid diagrams (flowchart, sequence, ER, gitGraph)"
+   checkout master
+   merge phase/8-docs id: "Phase 8: Documentation"
+```

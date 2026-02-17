@@ -1,0 +1,4 @@
+Carrier,Origin,Destination,Container Type,Service,Currency,Base Rate,Fuel Surcharge %,Valid From,Valid To,Transit Days
+CarrierA,Shanghai,Rotterdam,40HC,Express,USD,2500,12,2025-01-01,2025-12-31,28
+CarrierB,Busan,Los Angeles,40HC,Standard,USD,1800,15,2025-01-10,2025-10-10,17
+CarrierC,Singapore,Hamburg,20GP,Standard,EUR,1500,10,2025-02-01,2025-08-01,30

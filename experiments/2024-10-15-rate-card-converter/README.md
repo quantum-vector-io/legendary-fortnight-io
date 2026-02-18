@@ -31,17 +31,24 @@ model, sequence diagrams, and scaling strategies.
 # 1. Navigate to the project directory
 cd experiments/2024-10-15-rate-card-converter
 
-# 2. Install dependencies
+# 2. Create and activate a virtual environment
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS / Linux
+source .venv/bin/activate
+
+# 3. Install dependencies
 pip install -e ".[dev]"
 
-# 3. Configure environment (set OPENAI_API_KEY)
+# 4. Configure environment (set OPENAI_API_KEY)
 cp .env.example .env
 # Edit .env and set your OPENAI_API_KEY
 
-# 4. Generate sample files and test fixtures
+# 5. Generate sample files and test fixtures
 python samples/generate_samples.py --test-fixtures
 
-# 5. Start the development server
+# 6. Start the development server
 uvicorn src.api.app:app --reload
 
 # API is now running at http://localhost:8000

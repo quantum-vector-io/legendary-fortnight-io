@@ -198,6 +198,7 @@ The phases above map to the following Git history. Each phase was developed on
 its own branch and merged back to `master` after all tests passed:
 
 ```mermaid
+%%{init: { 'logLevel': 'debug', 'theme': 'default', 'gitGraph': { 'mainBranchName': 'master' } } }%%
 gitGraph
    commit id: "init: experiment scaffold"
 
